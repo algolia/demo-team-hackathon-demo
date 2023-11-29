@@ -1,8 +1,10 @@
-import algoliasearch from 'algoliasearch/lite'
-import '@algolia/satellite/satellite.min.css'
-import { InstantSearch } from 'react-instantsearch'
-import Homepage from '@/pages/Homepage'
-import { RecoilRoot } from 'recoil'
+
+import algoliasearch from "algoliasearch/lite";
+import "@algolia/satellite/satellite.min.css";
+import { Configure, InstantSearch } from "react-instantsearch";
+import Homepage from "@/pages/Homepage";
+import { RecoilRoot } from "recoil";
+
 
 function App() {
   const searchClient = algoliasearch(
@@ -16,6 +18,7 @@ function App() {
         searchClient={searchClient}
         indexName="mate_team_off_white"
       >
+      <Configure hitsPerPage={12} />
         <Homepage />
       </InstantSearch>
     </RecoilRoot>
