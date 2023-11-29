@@ -14,11 +14,11 @@ function App() {
 
   return (
     <RecoilRoot>
-      <Configure hitsPerPage={12} />
       <InstantSearch
         searchClient={searchClient}
         indexName="mate_team_off_white"
       >
+      <Configure hitsPerPage={12} />
         <Homepage />
       </InstantSearch>
     </RecoilRoot>

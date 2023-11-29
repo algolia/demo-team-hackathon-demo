@@ -11,7 +11,7 @@ const Hit = ({ hit }: { hit: BaseHit }) => {
           <div className="mx-auto aspect-square w-5/5 p-4">
             <img
               className="aspect-square w-full object-contain"
-              src={hit.image as string}
+              src={hit.image_link as string}
               onError={(e) => {
                 console.log(e);
               }}
@@ -21,7 +21,7 @@ const Hit = ({ hit }: { hit: BaseHit }) => {
 
         <div className="relative flex grow flex-col">
           <h2 className="mb-4 line-clamp-2 text-sm font-normal leading-snug text-colorBp-800">
-            {hit.name as string}
+            {hit.title as string}
           </h2>
         </div>
       </div>
@@ -31,6 +31,8 @@ const Hit = ({ hit }: { hit: BaseHit }) => {
 
 function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
   const { hits } = useHits(props);
+
+  console.log(hits);
 
   return (
     <div className="flex flex-wrap w-full h-[30rem] overflow-scroll">
