@@ -12,7 +12,6 @@ function App() {
 
   return (
     <InstantSearch searchClient={searchClient} indexName="electronics_ns">
-      <p className="text-2xl">Hello Mate Team</p>
       <Homepage />
     </InstantSearch>
   )
