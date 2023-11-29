@@ -2,7 +2,7 @@
 import { useHits, UseHitsProps } from 'react-instantsearch';
 import { BaseHit } from 'instantsearch.js/es/types/results';
 
-const Hit = ({ hit }: { hit: BaseHit }) => {
+export const Hit = ({ hit }: { hit: BaseHit }) => {
   return (
     <div className={`w-4/5 rounded-[9px] relative  p-0 mt-8 ${true && `background-animate`}`}>
         <div className="relative">

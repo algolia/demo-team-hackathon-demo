@@ -9,8 +9,9 @@ import home7 from "@/assets/images/home7.png";
 import home8 from "@/assets/images/home8.png";
 import footer from "@/assets/images/footer.png";
 import CodeModal from "../components/CodeModal";
-import SearchBox from '@/components/SearchBox'
-import ResultsContainer from '@/components/resultsContainer'
+import SearchBox from "@/components/SearchBox";
+import ResultsContainer from "@/components/resultsContainer";
+import Carousel from "@/components/Carousel";
 
 const Homepage = () => {
   return (
@@ -20,6 +21,9 @@ const Homepage = () => {
       <section className="flex flex-col items-center py-32 bg-[#000034]">
         <div className="w-[90%] shadow-custom bg-white rounded-[16px] py-12 px-8">
           <SearchBox />
+          <div className="h-0 overflow-hidden">
+            <Carousel />
+          </div>
           <ResultsContainer />
         </div>
       </section>
@@ -35,7 +39,7 @@ const Homepage = () => {
         <img src={footer} alt="" />
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;
