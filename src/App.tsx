@@ -13,7 +13,6 @@ import Homepage from './pages/Homepage'
 // To test Hits
 function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
   const { hits } = useHits(props)
-  console.log(hits)
 
   return (
     <div>
