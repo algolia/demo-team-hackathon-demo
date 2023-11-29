@@ -36,7 +36,7 @@ const RefinementsSelector = ({
       </div>
       <div
         className={`absolute bg-white w-full p-2 left-0 top-12 transition-opacity duration-300 ${
-          isComponentVisible ? 'opacity-100' : 'opacity-0'
+          isComponentVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >
         {items.map((item) => (
