@@ -1,10 +1,13 @@
 
 import { useHits, UseHitsProps } from 'react-instantsearch';
 import { BaseHit } from 'instantsearch.js/es/types/results';
+import { IndexAtom, indexAtom } from "@/recoil/neuralToggle";
+import { useRecoilState } from "recoil";
 
 const Hit = ({ hit }: { hit: BaseHit }) => {
+  const [activeIndex, setActiveIndex] = useRecoilState<IndexAtom>(indexAtom);
   return (
-    <div className={`w-4/5 rounded-[9px] relative  p-0 mt-8 ${true && `background-animate`}`}>
+    <div className={`w-4/5 rounded-[9px] relative  p-0 mt-8 ${activeIndex.isNeural && `background-animate`}`}>
         <div className="relative">
           <div className="mx-auto w-full p-[2px] ">
             <img
