@@ -16,7 +16,7 @@ function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
     <div>
       {hits.map((hit) => (
         <div key={hit.objectID}>
-          <p>{hit?.name}</p>
+          <p className="text-lg text-cyan-500">{hit?.name as undefined}</p>
         </div>
       ))}
     </div>
@@ -32,7 +32,7 @@ function App() {
 
   return (
     <InstantSearch searchClient={searchClient} indexName="electronics_ns">
-      <p>Hello Mate Team</p>
+      <p className="text-2xl">Hello Mate Team</p>
       <SearchBox />
       <CustomHits />
     </InstantSearch>

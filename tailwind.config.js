@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{html,js,jsx}', './index.html'],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     fontFamily: {
       // Add font family name here
@@ -65,7 +68,5 @@ export default {
       },
     },
   },
-  plugins: ['@marcreichel/tailwind-css-properties', '@tailwindcss/container-queries', 'prettier-plugin-tailwindcss'],
-
+  plugins: ['@marcreichel/tailwind-css-properties', '@tailwindcss/container-queries', 'prettier-plugin-tailwindcss']
 }
-
