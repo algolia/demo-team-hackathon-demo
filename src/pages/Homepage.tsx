@@ -14,6 +14,7 @@ import ResultsContainer from '@/components/resultsContainer'
 import { Toggle } from '@algolia/satellite'
 import { IndexAtom, indexAtom } from '@/recoil/neuralToggle'
 import { useRecoilState } from 'recoil'
+import CtaButton from '@/components/CtaButton'
 
 const Homepage = () => {
   const [activeIndex, setActiveIndex] = useRecoilState<IndexAtom>(indexAtom)
@@ -44,6 +45,7 @@ const Homepage = () => {
           </div>
           <ResultsContainer />
         </div>
+        <CtaButton />
       </section>
 
       <img src={home2} alt="home2" />

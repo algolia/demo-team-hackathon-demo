@@ -5,7 +5,6 @@ import Homepage from '@/pages/Homepage'
 import { RecoilRoot } from 'recoil'
 import { indexAtom } from './recoil/neuralToggle'
 import { useRecoilValue } from 'recoil'
-import CtaButton from '@/components/CtaButton'
 
 const searchClient = algoliasearch(
   'O7KBN4GOML',
@@ -18,7 +17,6 @@ const Main = () => {
     <InstantSearch searchClient={searchClient} indexName={index.name}>
       <Configure hitsPerPage={12} />
       <Homepage />
-      <CtaButton />
     </InstantSearch>
   )
 }
