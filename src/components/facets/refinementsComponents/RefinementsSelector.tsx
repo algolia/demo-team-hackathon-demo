@@ -1,11 +1,13 @@
+import CodeRevealButton from '@/components/CodeRevealButton'
 import { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
 import { UseRefinementListProps, useRefinementList } from 'react-instantsearch'
 
 const RefinementsSelector = ({
   label,
+  jsCode,
   ...props
-}: UseRefinementListProps & { label: string }) => {
+}: UseRefinementListProps & { label: string, jsCode: string }) => {
   const { items, refine } = useRefinementList(props)
   const [isOpened, setIsOpened] = useState<boolean>(false)
 
@@ -17,16 +19,19 @@ const RefinementsSelector = ({
   return (
     <div
       className="border-[1px] border-gray-200 p-2 w-1/5 items-start cursor-pointer relative"
-      onClick={() => setIsOpened(!isOpened)}
+
     >
       <div className="flex justify-between">
         <p className="text-base font-medium text-colorBp-refinementBadgeTextColor">
           {label}
         </p>
-        {isOpened ? <ChevronUp /> : <ChevronDown />}
+        <div className='flex'>
+          <CodeRevealButton jsCode={jsCode} />
+        {isOpened ? <div onClick={() => setIsOpened(!isOpened)}><ChevronUp /></div> : <div onClick={() => setIsOpened(!isOpened)}><ChevronDown /></div>}
+        </div>
       </div>
       <div
-        className={`absolute bg-white w-full p-2 left-0 top-12 transition-opacity duration-300 ${
+        className={`absolute bg-white w-full p-2 left-0 top-12 transition-opacity duration-300 z-50 ${
           isOpened ? 'opacity-100' : 'opacity-0'
         }`}
       >
