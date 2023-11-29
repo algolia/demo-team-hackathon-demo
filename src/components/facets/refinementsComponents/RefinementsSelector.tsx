@@ -1,7 +1,6 @@
 import { useComponentVisible } from '@/hooks/useComponentVisible'
 
 import CodeRevealButton from '@/components/CodeRevealButton'
-import { useState } from 'react'
 
 import { ChevronDown, ChevronUp } from 'react-feather'
 import { UseRefinementListProps, useRefinementList } from 'react-instantsearch'
