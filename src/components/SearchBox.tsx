@@ -36,7 +36,7 @@ const SearchBox = () => {
 
   return (
     <div
-      className={`flex w-full border pl-4 md:p-1.5 md:pl-4 rounded ${
+      className={`flex w-full border pl-4 md:p-1.5 md:pl-4 rounded-sm  shadow-cta ${
         isFocused ? 'border-neutral-400 ring-1 ring-inset ring-neutral-800' : 'border-x-transparent border-y-slate-300 md:border-neutral-400'
       }`}
     >
