@@ -4,7 +4,6 @@ import { useSearchBox } from "react-instantsearch";
 const SearchBox = () => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const { query, refine } = useSearchBox();
-  const [recentSearches, setRecentSearches] = useState<{ label: string }[]>([]);
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -14,16 +13,13 @@ const SearchBox = () => {
     setIsFocused(false);
   };
 
-  const addSearch = (item: string) => {
-    const updatedSearches = [...recentSearches, { label: item }];
-    setRecentSearches(updatedSearches);
-    localStorage.setItem("recentSearches", JSON.stringify(updatedSearches));
+  const addSearch = (query: string) => {
     refine(query);
   };
 
   return (
     <div
-      className={`flex w-full border p-2 pl-4 md:p-1.5 md:pl-4 rounded-[8px] ${
+      className={`flex w-full border p-2 pl-4 md:p-1.5 md:pl-4 rounded ${
         isFocused
           ? "border-neutral-400 ring-1 ring-inset ring-neutral-800"
           : "border-x-transparent border-y-slate-300 md:border-neutral-400"
