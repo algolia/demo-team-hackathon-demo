@@ -1,7 +1,8 @@
 import algoliasearch from "algoliasearch/lite";
-
+import "@algolia/satellite/satellite.min.css";
 import { Configure, InstantSearch } from "react-instantsearch";
 import Homepage from "@/pages/Homepage";
+import { RecoilRoot } from "recoil";
 
 // To test replace with our own
 function App() {
@@ -11,10 +12,12 @@ function App() {
   );
 
   return (
-    <InstantSearch searchClient={searchClient} indexName="electronics_ns">
-      <Configure hitsPerPage={12} />
-      <Homepage />
-    </InstantSearch>
+    <RecoilRoot>
+      <InstantSearch searchClient={searchClient} indexName="electronics_ns">
+        <Configure hitsPerPage={12} />
+        <Homepage />
+      </InstantSearch>
+    </RecoilRoot>
   );
 }
 
