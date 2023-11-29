@@ -17,16 +17,6 @@ export default {
         "monospace",
       ],
     },
-    borderRadius: {
-      card: "var(--theme-border-radius-card, 0.5rem)",
-      input: "var(--theme-border-radius-input, 0.25rem)",
-      button: "var(--theme-border-radius-button, 0.25rem)",
-      pill: "var(--theme-border-radius-pill, 9999px)",
-      "admin-button": "0.25rem",
-      "admin-pill": "9999px",
-      "admin-card": "0.5rem",
-      "admin-input": "0.25rem",
-    },
     extend: {
       colors: {
         algolia: {
