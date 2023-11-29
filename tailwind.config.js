@@ -46,6 +46,9 @@ export default {
           700: '#3f3f46',
           800: '#27272a',
           900: '#18181b',
+          refinementBadge: '#E9E9F0',
+          refinementBadgeTextColor: '#2A286A',
+          clearRefinementButtonColor: '#003EFF'
         },
       },
       backdropBlur: {
