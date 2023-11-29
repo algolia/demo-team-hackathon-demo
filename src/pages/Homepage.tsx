@@ -9,17 +9,38 @@ import home7 from "@/assets/images/home7.png";
 import home8 from "@/assets/images/home8.png";
 import footer from "@/assets/images/footer.png";
 import CodeModal from "../components/CodeModal";
-import SearchBox from '@/components/SearchBox'
-import ResultsContainer from '@/components/resultsContainer'
+import SearchBox from "@/components/SearchBox";
+import ResultsContainer from "@/components/resultsContainer";
+import { Toggle } from "@algolia/satellite";
+import { IndexAtom, indexAtom } from "@/recoil/neuralToggle";
+import { useRecoilState } from "recoil";
 
 const Homepage = () => {
+  const [activeIndex, setActiveIndex] = useRecoilState<IndexAtom>(indexAtom);
+
+  const handleToggleChange = (value: boolean) => {
+    setActiveIndex({
+      isNeural: value,
+      name: value ? "mate_team_off_white_ns" : "mate_team_off_white",
+    });
+  };
+
   return (
     <div>
       <CodeModal />
       <img src={home1} alt="home1" />
       <section className="flex flex-col items-center py-32 bg-[#000034]">
         <div className="w-[90%] shadow-custom bg-white rounded-[16px] py-12 px-8">
-          <SearchBox />
+          <div className="flex items-center gap-12">
+            <SearchBox />
+            <div className="flex items-center gap-2">
+              <Toggle
+                onChange={(e) => handleToggleChange(e.target.checked)}
+                checked={activeIndex.isNeural}
+              />
+              <p className="text-md font-medium text-[#013EFF]">AI</p>
+            </div>
+          </div>
           <ResultsContainer />
         </div>
       </section>
@@ -35,7 +56,7 @@ const Homepage = () => {
         <img src={footer} alt="" />
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;
