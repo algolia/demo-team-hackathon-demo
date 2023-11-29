@@ -1,24 +1,8 @@
 import algoliasearch from "algoliasearch/lite";
 import "@algolia/satellite/satellite.min.css";
-import { BaseHit } from "instantsearch.js/es/types/results";
-import { InstantSearch, useHits, UseHitsProps } from "react-instantsearch";
+import { InstantSearch } from "react-instantsearch";
 import Homepage from "@/pages/Homepage";
 import { RecoilRoot } from "recoil";
-
-function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
-  const { hits } = useHits(props);
-
-  return (
-    <div>
-      <Homepage />
-      {hits.map((hit) => (
-        <div key={hit.objectID}>
-          <p className="text-lg text-cyan-500">{hit?.name as undefined}</p>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 // To test replace with our own
 function App() {
@@ -30,7 +14,7 @@ function App() {
   return (
     <RecoilRoot>
       <InstantSearch searchClient={searchClient} indexName="electronics_ns">
-        <CustomHits />
+        <Homepage />
       </InstantSearch>
     </RecoilRoot>
   );
