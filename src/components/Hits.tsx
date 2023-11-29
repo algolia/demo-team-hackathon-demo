@@ -26,7 +26,7 @@ function CustomHits() {
 export default CustomHits
 `
 
-const Hit = ({ hit }: { hit: BaseHit }) => {
+export const Hit = ({ hit }: { hit: BaseHit }) => {
   const [neuralBorder, setNeuralBorder] = useState(false)
   const [activeIndex, setActiveIndex] = useRecoilState<IndexAtom>(indexAtom)
   return (
