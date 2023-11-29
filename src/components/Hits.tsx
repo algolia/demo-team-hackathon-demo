@@ -10,7 +10,7 @@ function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
     <div>
       {hits.map((hit) => (
         <div key={hit.objectID}>
-          <p className="text-lg text-cyan-500">{hit?.name as undefined}</p>
+          <p className="text-lg text-cyan-500">{hit?.title as undefined}</p>
         </div>
       ))}
     </div>

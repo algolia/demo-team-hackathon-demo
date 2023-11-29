@@ -1,23 +1,26 @@
-import algoliasearch from "algoliasearch/lite";
-import "@algolia/satellite/satellite.min.css";
-import { InstantSearch } from "react-instantsearch";
-import Homepage from "@/pages/Homepage";
-import { RecoilRoot } from "recoil";
+import algoliasearch from 'algoliasearch/lite'
+import '@algolia/satellite/satellite.min.css'
+import { InstantSearch } from 'react-instantsearch'
+import Homepage from '@/pages/Homepage'
+import { RecoilRoot } from 'recoil'
 
 // To test replace with our own
 function App() {
   const searchClient = algoliasearch(
-    "Q6N17K5UHW",
-    "5b40da503669ba0a30f39a990ff80a65"
-  );
+    'O7KBN4GOML',
+    'a5aaf6b6f2fd1ab836269bf8e4b5f70e'
+  )
 
   return (
     <RecoilRoot>
-      <InstantSearch searchClient={searchClient} indexName="electronics_ns">
+      <InstantSearch
+        searchClient={searchClient}
+        indexName="mate_team_off_white"
+      >
         <Homepage />
       </InstantSearch>
     </RecoilRoot>
-  );
+  )
 }
 
-export default App;
+export default App
