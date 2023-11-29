@@ -9,10 +9,12 @@ import home7 from "@/assets/images/home7.png";
 import home8 from "@/assets/images/home8.png";
 import footer from "@/assets/images/footer.png";
 import SearchBox from "../components/SearchBox";
+import CodeModal from "../components/CodeModal";
 
 const Homepage = () => {
   return (
     <div>
+      <CodeModal />
       <img src={home1} alt="home1" />
       <section className="flex flex-col items-center py-32 bg-[#000034]">
         <div className="w-[90%] shadow-custom bg-white rounded-[16px] py-12 px-8">

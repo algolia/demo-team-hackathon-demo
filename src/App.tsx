@@ -1,7 +1,9 @@
 import algoliasearch from "algoliasearch/lite";
+import "@algolia/satellite/satellite.min.css";
 import { BaseHit } from "instantsearch.js/es/types/results";
 import { InstantSearch, useHits, UseHitsProps } from "react-instantsearch";
 import Homepage from "@/pages/Homepage";
+import { RecoilRoot } from "recoil";
 
 // To test Hits
 function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
@@ -27,9 +29,11 @@ function App() {
   );
 
   return (
-    <InstantSearch searchClient={searchClient} indexName="electronics_ns">
-      <CustomHits />
-    </InstantSearch>
+    <RecoilRoot>
+      <InstantSearch searchClient={searchClient} indexName="electronics_ns">
+        <CustomHits />
+      </InstantSearch>
+    </RecoilRoot>
   );
 }
 
