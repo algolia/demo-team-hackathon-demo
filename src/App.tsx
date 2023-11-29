@@ -12,7 +12,7 @@ const Main = () => {
   const index = useRecoilValue(indexAtom)
   return (
     <InstantSearch searchClient={searchClient} indexName={index.name}>
-      <Configure hitsPerPage={12} />
+      <Configure hitsPerPage={12} getRankingInfo />
       <Homepage />
     </InstantSearch>
   )
