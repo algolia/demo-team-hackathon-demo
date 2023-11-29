@@ -60,10 +60,18 @@ export default {
           "0%": { height: "0", opacity: 0 },
           "100%": { height: "23px", opacity: 1 },
         },
+        gradient: {
+          '0%': { fill: 'var(--theme-color-primary, #1E59FF)' },
+          '30%': { fill: 'var(--theme-color-primary, #0DB7EB)' },  
+          '50%': { fill: 'var(--theme-color-primary, #CEFF00)' },
+          '80%': { fill: 'var(--theme-color-primary, #0DB7EB)' },
+          '100%': { fill: 'var(--theme-color-primary, #1E59FF)' },  
+        }
       },
       animation: {
         flicker: "flicker 2s ease-in-out infinite",
         fillIn: "fillIn 0.3s ease-in-out forwards",
+        gradient: 'gradient 3s ease-in-out infinite',
       },
     },
   },

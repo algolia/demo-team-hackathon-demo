@@ -5,7 +5,7 @@ import { BaseHit } from "instantsearch.js/es/types/results";
 
 const Hit = ({ hit }: { hit: BaseHit }) => {
   return (
-    <div className="w-full">
+    <div className="w-full relative before:absolute before:rounded-full before:-left-2.5 before:z-[-1] before:h-full before:w-full before:animate-gradient before:bg-[linear-gradient(to_right,#1E59FF,#0DB7EB,#CEFF00,#0DB7EB,#1E59FF)] before:bg-[200%_200%] before:p-2.5 before:content-['']">
       <div className="relative flex flex-col p-4 pb-0">
         <div className="relative">
           <div className="mx-auto aspect-square w-5/5 p-4">
