@@ -1,6 +1,7 @@
 // COMPONENTS
 import CustomHits from '@/components/Hits'
 import CustomStats from '@/components/CustomStats'
+import Facets from './facets/Facets'
 
 const ResultsContainer = () => {
   return (
@@ -9,7 +10,9 @@ const ResultsContainer = () => {
         <div className="flex justify-end ">
           <CustomStats />
         </div>
-        <div>{/* HERE GOES THE FILTERS */}</div>
+        <div>
+          <Facets />
+        </div>
       </div>
       <div>
         <CustomHits />
