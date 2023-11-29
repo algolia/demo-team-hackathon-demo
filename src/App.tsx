@@ -1,11 +1,11 @@
 import algoliasearch from 'algoliasearch/lite'
+import { BaseHit } from 'instantsearch.js/es/types/results'
 import {
   InstantSearch,
   SearchBox,
   useHits,
   UseHitsProps,
 } from 'react-instantsearch'
-import { BaseHit } from 'instantsearch.js/es/types/results'
 
 // To test Hits
 function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
@@ -14,9 +14,9 @@ function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
 
   return (
     <div>
-      {hits.map((hit: Hit<BaseHit>) => (
+      {hits.map((hit) => (
         <div key={hit.objectID}>
-          <p>{hit.name}</p>
+          <p>{hit?.name}</p>
         </div>
       ))}
     </div>
