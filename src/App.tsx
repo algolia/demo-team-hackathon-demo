@@ -3,6 +3,7 @@ import '@algolia/satellite/satellite.min.css'
 import { Configure, InstantSearch } from 'react-instantsearch'
 import Homepage from '@/pages/Homepage'
 import { RecoilRoot } from 'recoil'
+import CtaButton from './components/CtaButton'
 
 function App() {
   const searchClient = algoliasearch(
@@ -20,6 +21,7 @@ function App() {
 
         <Homepage />
       </InstantSearch>
+      <CtaButton />
     </RecoilRoot>
   )
 }
