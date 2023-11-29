@@ -1,3 +1,4 @@
+
 import { useHits, UseHitsProps } from 'react-instantsearch';
 import { BaseHit } from 'instantsearch.js/es/types/results';
 
@@ -11,7 +12,7 @@ const Hit = ({ hit }: { hit: BaseHit }) => {
               src={hit.image_link as string}
               alt={hit.title as string}
               onError={(e) => {
-                console.log(e);
+                console.log(e)
               }}
             />
             <div className="absolute  -translate-x-1/2 left-1/2 bottom-2 w-auto px-4 py-2 bg-white border border-gray">
@@ -22,13 +23,11 @@ const Hit = ({ hit }: { hit: BaseHit }) => {
           </div>
         </div>
     </div>
-  );
-};
+  )
+}
 
 function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
-  const { hits } = useHits(props);
-
-  console.log(hits);
+  const { hits } = useHits(props)
 
   return (
     <div className="flex flex-wrap w-full h-[30rem] overflow-scroll">
@@ -38,7 +37,7 @@ function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
         </div>
       ))}
     </div>
-  );
+  )
 }
 
-export default CustomHits;
+export default CustomHits
