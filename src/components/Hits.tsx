@@ -1,14 +1,39 @@
 
 import { useHits, UseHitsProps } from 'react-instantsearch';
 import { BaseHit } from 'instantsearch.js/es/types/results';
+
 import { IndexAtom, indexAtom } from "@/recoil/neuralToggle";
 import { useRecoilState } from "recoil";
 
+import CodeRevealButton from './CodeRevealButton';
+import { NeuralBadge } from './NeuralBadge';
+import { useState } from 'react';
+
+const statsCode = `
+function CustomHits() {
+  const { hits } = useHits(props)
+
+  return (
+    <div>
+      {hits.map(hit => (
+        <div key={hit.objectID}>
+          <HitComponent hit={hit} />
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export default CustomHits
+`
+
 const Hit = ({ hit }: { hit: BaseHit }) => {
+  const [neuralBorder, setNeuralBorder] = useState(false)
   const [activeIndex, setActiveIndex] = useRecoilState<IndexAtom>(indexAtom);
   return (
-    <div className={`w-4/5 rounded-[9px] relative  p-0 mt-8 ${activeIndex.isNeural && `background-animate`}`}>
+    <div className={`w-4/5 rounded-[9px] relative  p-0 mt-8 ${activeIndex.isNeural && neuralBorder && `background-animate`}`}>
         <div className="relative">
+          <NeuralBadge rankingInfo={hit._rankingInfo} setNeuralBorder={setNeuralBorder}/>
           <div className="mx-auto w-full p-[2px] ">
             <img
               className="w-full aspect-[5/7] rounded-lg object-cover border-[3px] border-white"
@@ -33,7 +58,8 @@ function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
   const { hits } = useHits(props)
 
   return (
-    <div className="flex flex-wrap w-full h-[30rem] overflow-scroll">
+    <div className="relative flex flex-wrap w-full h-[30rem] overflow-scroll">
+    <div className="absolute top-0 right-4"><CodeRevealButton jsCode={statsCode} /></div>
       {hits.map((hit) => (
         <div key={hit.objectID} className="w-1/4 p-2">
           <Hit hit={hit} />
