@@ -6,7 +6,9 @@ import {
   useHits,
   UseHitsProps,
 } from 'react-instantsearch'
+
 import Facets from './components/facets/Facets'
+import Homepage from './pages/Homepage'
 
 // To test Hits
 function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
@@ -15,6 +17,7 @@ function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
 
   return (
     <div>
+      <Homepage />
       {hits.map((hit) => (
         <div key={hit.objectID}>
           <p className="text-lg text-cyan-500">{hit?.name as undefined}</p>
