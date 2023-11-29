@@ -39,6 +39,7 @@ function App() {
       <Facets />
       <SearchBox />
       <CustomHits />
+      <Homepage />
     </InstantSearch>
   )
 }
