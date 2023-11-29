@@ -12,9 +12,11 @@
   "dependencies": {
     "@marcreichel/tailwind-css-properties": "^1.5.1",
     "@tailwindcss/container-queries": "^0.1.1",
+    "algoliasearch": "^4.20.0",
     "prettier-plugin-tailwindcss": "^0.5.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-instantsearch": "^7.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",
