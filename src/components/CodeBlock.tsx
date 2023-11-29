@@ -1,5 +1,5 @@
 import ace from 'ace-builds'
-import 'ace-builds/src-noconflict/theme-monokai'
+import 'ace-builds/src-noconflict/theme-tomorrow_night_blue'
 import 'ace-builds/src-noconflict/mode-javascript'
 import { useEffect, useRef } from 'react'
 
@@ -12,7 +12,7 @@ const CodeBlock = ({ value }: Props) => {
 
   useEffect(() => {
     const editor = ace.edit(editorRef.current)
-    editor.setTheme('ace/theme/monokai')
+    editor.setTheme('ace/theme/tomorrow_night_blue')
     editor.getSession().setMode('ace/mode/javascript')
     editor.setValue(value, -1)
 
@@ -23,7 +23,7 @@ const CodeBlock = ({ value }: Props) => {
 
   return (
     <div className={`CodeEditor h-full w-full`}>
-      <div ref={editorRef} style={{ width: '480px', height: '320px' }} />
+      <div className="code-scroll" ref={editorRef} style={{ width: '480px', height: '320px' }} />
     </div>
   )
 }

@@ -113,3 +113,35 @@ input:focus ~ .stl-toggle {
     background-position: 100% 50%;
   }
 }
+
+/* Scrollbars */
+.hits-scroll::-webkit-scrollbar {
+  /* height: 12px; */
+  width: 6px;
+  background: transparent;
+}
+
+.hits-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 1ex;
+}
+
+.hits-scroll::-webkit-scrollbar-corner {
+  background: #000;
+}
+
+.ace_scrollbar::-webkit-scrollbar {
+  /* height: 12px; */
+  width: 6px;
+  height: 6px;
+  background: transparent;
+}
+
+.ace_scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(256, 256, 256, 0.2);
+  -webkit-border-radius: 1ex;
+}
+
+.ace_scrollbar::-webkit-scrollbar-corner {
+  background: #000;
+}

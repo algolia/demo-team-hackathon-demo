@@ -55,9 +55,9 @@ function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
   const { hits } = useHits(props)
 
   return (
-    <div className="relative flex flex-wrap w-full h-[30rem] overflow-scroll">
+    <div className="hits-scroll relative flex flex-wrap w-full h-[30rem] overflow-auto">
       <div className="absolute top-0 right-4">
-        <CodeRevealButton jsCode={statsCode} />
+        <CodeRevealButton jsCode={statsCode} openDirection="left" />
       </div>
       {hits.map((hit) => (
         <div key={hit.objectID} className="w-1/4 p-2">
