@@ -1,27 +1,32 @@
-import algoliasearch from 'algoliasearch/lite'
-import '@algolia/satellite/satellite.min.css'
-import { Configure, InstantSearch } from 'react-instantsearch'
-import Homepage from '@/pages/Homepage'
-import { RecoilRoot } from 'recoil'
+import algoliasearch from "algoliasearch/lite";
+import "@algolia/satellite/satellite.min.css";
+import { Configure, InstantSearch } from "react-instantsearch";
+import Homepage from "@/pages/Homepage";
+import { RecoilRoot } from "recoil";
+import { indexAtom } from "./recoil/neuralToggle";
+import { useRecoilValue } from "recoil";
+
+const searchClient = algoliasearch(
+  "O7KBN4GOML",
+  "5fd33be39e68c5459847843dbda5fa7c"
+);
+
+const Main = () => {
+  const index = useRecoilValue(indexAtom);
+  return (
+    <InstantSearch searchClient={searchClient} indexName={index.name}>
+      <Configure hitsPerPage={12} />
+      <Homepage />
+    </InstantSearch>
+  );
+};
 
 function App() {
-  const searchClient = algoliasearch(
-    'O7KBN4GOML',
-    'a5aaf6b6f2fd1ab836269bf8e4b5f70e'
-  )
-
   return (
     <RecoilRoot>
-      <InstantSearch
-        searchClient={searchClient}
-        indexName="mate_team_off_white"
-      >
-        <Configure hitsPerPage={12} />
-
-        <Homepage />
-      </InstantSearch>
+      <Main />
     </RecoilRoot>
-  )
+  );
 }
 
-export default App
+export default App;
