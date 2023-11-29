@@ -21,7 +21,7 @@ const CodeRevealButton = ({ jsCode, openDirection = 'right' }: Props) => {
   }
 
   return (
-    <div className="relative flex z-[100]" ref={ref}>
+    <div className="relative flex" ref={ref}>
       <button
         onClick={revealModal}
         className={`code-btn z-20 relative rounded w-[28px] flex justify-center items-center transition-all ease-in-out ${
