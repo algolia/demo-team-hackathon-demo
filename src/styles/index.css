@@ -19,6 +19,11 @@
   margin: 0;
   outline: none;
 }
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
 /*
   Typographic tweaks!
   3. Add accessible line-height
