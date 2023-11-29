@@ -64,11 +64,11 @@ export default {
           "100%": { height: "23px", opacity: 1 },
         },
         gradient: {
-          '0%': { fill: 'var(--theme-color-primary, #1E59FF)' },
-          '30%': { fill: 'var(--theme-color-primary, #0DB7EB)' },  
-          '50%': { fill: 'var(--theme-color-primary, #CEFF00)' },
-          '80%': { fill: 'var(--theme-color-primary, #0DB7EB)' },
-          '100%': { fill: 'var(--theme-color-primary, #1E59FF)' },  
+          '0%': { fill: '#1E59FF' },
+          '30%': { fill: '#0DB7EB' },  
+          '50%': { fill: '#CEFF00' },
+          '80%': { fill: '#0DB7EB' },
+          '100%': { fill: '#1E59FF' },  
         }
       },
       animation: {

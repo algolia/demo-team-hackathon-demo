@@ -1,38 +1,33 @@
-import { useHits, UseHitsProps } from "react-instantsearch";
-import { BaseHit } from "instantsearch.js/es/types/results";
 
-// To test Hits
+import { useHits, UseHitsProps } from 'react-instantsearch';
+import { BaseHit } from 'instantsearch.js/es/types/results';
 
 const Hit = ({ hit }: { hit: BaseHit }) => {
   return (
-    <div className="w-full relative before:absolute before:rounded-full before:-left-2.5 before:z-[-1] before:h-full before:w-full before:animate-gradient before:bg-[linear-gradient(to_right,#1E59FF,#0DB7EB,#CEFF00,#0DB7EB,#1E59FF)] before:bg-[200%_200%] before:p-2.5 before:content-['']">
-      <div className="relative flex flex-col p-4 pb-0">
+    <div className={`w-4/5 rounded-[9px] relative  p-0 mt-8 ${true && `background-animate`}`}>
         <div className="relative">
-          <div className="mx-auto aspect-square w-5/5 p-4">
+          <div className="mx-auto w-full p-[2px] ">
             <img
-              className="aspect-square w-full object-contain"
+              className="w-full aspect-[5/7] rounded-lg object-cover border-[3px] border-white"
               src={hit.image_link as string}
+              alt={hit.title as string}
               onError={(e) => {
-                console.log(e);
+                console.log(e)
               }}
             />
+            <div className="absolute  -translate-x-1/2 left-1/2 bottom-2 w-auto px-4 py-2 bg-white border border-gray">
+              <h2 className="text-sm text-center font-semibold text-black">
+                {(hit.title as string).split(' - ')[1]}
+              </h2>
+            </div>
           </div>
         </div>
-
-        <div className="relative flex grow flex-col">
-          <h2 className="mb-4 line-clamp-2 text-sm font-normal leading-snug text-colorBp-800">
-            {hit.title as string}
-          </h2>
-        </div>
-      </div>
     </div>
-  );
-};
+  )
+}
 
 function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
-  const { hits } = useHits(props);
-
-  console.log(hits);
+  const { hits } = useHits(props)
 
   return (
     <div className="flex flex-wrap w-full h-[30rem] overflow-scroll">
@@ -42,7 +37,7 @@ function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
         </div>
       ))}
     </div>
-  );
+  )
 }
 
-export default CustomHits;
+export default CustomHits
