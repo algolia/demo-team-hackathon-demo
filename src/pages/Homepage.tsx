@@ -1,29 +1,29 @@
 // ASSETS
-import home1 from "@/assets/images/home1.png";
-import home2 from "@/assets/images/home2.png";
-import home3 from "@/assets/images/home3.png";
-import home4 from "@/assets/images/home4.png";
-import home5 from "@/assets/images/home5.png";
-import home6 from "@/assets/images/home6.png";
-import home7 from "@/assets/images/home7.png";
-import home8 from "@/assets/images/home8.png";
-import footer from "@/assets/images/footer.png";
-import CodeModal from "../components/CodeModal";
-import SearchBox from "@/components/SearchBox";
-import ResultsContainer from "@/components/resultsContainer";
-import { Toggle } from "@algolia/satellite";
-import { IndexAtom, indexAtom } from "@/recoil/neuralToggle";
-import { useRecoilState } from "recoil";
+import home1 from '@/assets/images/home1.png'
+import home2 from '@/assets/images/home2.png'
+import home3 from '@/assets/images/home3.png'
+import home4 from '@/assets/images/home4.png'
+import home5 from '@/assets/images/home5.png'
+import home6 from '@/assets/images/home6.png'
+import home7 from '@/assets/images/home7.png'
+import home8 from '@/assets/images/home8.png'
+import footer from '@/assets/images/footer.png'
+import CodeModal from '../components/CodeModal'
+import SearchBox from '@/components/SearchBox'
+import ResultsContainer from '@/components/resultsContainer'
+import { Toggle } from '@algolia/satellite'
+import { IndexAtom, indexAtom } from '@/recoil/neuralToggle'
+import { useRecoilState } from 'recoil'
 
 const Homepage = () => {
-  const [activeIndex, setActiveIndex] = useRecoilState<IndexAtom>(indexAtom);
+  const [activeIndex, setActiveIndex] = useRecoilState<IndexAtom>(indexAtom)
 
   const handleToggleChange = (value: boolean) => {
     setActiveIndex({
       isNeural: value,
-      name: value ? "mate_team_off_white_ns" : "mate_team_off_white",
-    });
-  };
+      name: value ? 'mate_team_off_white_ns' : 'mate_team_off_white',
+    })
+  }
 
   return (
     <div>
@@ -37,8 +37,9 @@ const Homepage = () => {
               <Toggle
                 onChange={(e) => handleToggleChange(e.target.checked)}
                 checked={activeIndex.isNeural}
+                color="#013EFF"
               />
-              <p className="text-md font-medium text-[#013EFF]">AI</p>
+              <p className="font-medium text-md text-aloglia-xenonDark">AI</p>
             </div>
           </div>
           <ResultsContainer />
@@ -56,7 +57,7 @@ const Homepage = () => {
         <img src={footer} alt="" />
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default Homepage;
+export default Homepage
