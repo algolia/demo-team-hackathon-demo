@@ -6,6 +6,7 @@ import {
   useHits,
   UseHitsProps,
 } from 'react-instantsearch'
+import Facets from './components/facets/Facets'
 
 // To test Hits
 function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
@@ -33,6 +34,7 @@ function App() {
   return (
     <InstantSearch searchClient={searchClient} indexName="electronics_ns">
       <p className="text-2xl">Hello Mate Team</p>
+      <Facets />
       <SearchBox />
       <CustomHits />
     </InstantSearch>
