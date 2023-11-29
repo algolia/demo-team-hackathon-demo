@@ -1,6 +1,25 @@
 
 import { useHits, UseHitsProps } from 'react-instantsearch';
 import { BaseHit } from 'instantsearch.js/es/types/results';
+import CodeRevealButton from './CodeRevealButton';
+
+const statsCode = `
+function CustomHits() {
+  const { hits } = useHits(props)
+
+  return (
+    <div>
+      {hits.map(hit => (
+        <div key={hit.objectID}>
+          <HitComponent hit={hit} />
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export default CustomHits
+`
 
 export const Hit = ({ hit }: { hit: BaseHit }) => {
   return (
@@ -30,7 +49,8 @@ function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
   const { hits } = useHits(props)
 
   return (
-    <div className="flex flex-wrap w-full h-[30rem] overflow-scroll">
+    <div className="relative flex flex-wrap w-full h-[30rem] overflow-scroll">
+    <div className="absolute top-0 right-4"><CodeRevealButton jsCode={statsCode} /></div>
       {hits.map((hit) => (
         <div key={hit.objectID} className="w-1/4 p-2">
           <Hit hit={hit} />
