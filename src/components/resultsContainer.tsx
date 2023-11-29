@@ -1,10 +1,10 @@
 // COMPONENTS
-import CustomHits from '@/components/Hits'
-import CustomStats from '@/components/CustomStats'
+import CustomHits from "@/components/Hits";
+import CustomStats from "@/components/CustomStats";
 
 const ResultsContainer = () => {
   return (
-    <div className="flex flex-col items-center justify-center m-2">
+    <div className="flex flex-col items-center justify-center m-2 ">
       <div className="w-full">
         <div className="flex justify-end ">
           <CustomStats />
@@ -15,7 +15,7 @@ const ResultsContainer = () => {
         <CustomHits />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ResultsContainer
+export default ResultsContainer;
