@@ -42,7 +42,11 @@ const Homepage = () => {
               <p className="text-md font-medium text-[#013EFF]">AI</p>
             </div>
           </div>
-          <div className="h-0 overflow-hidden">
+          <div
+            className={`overflow-hidden transition-all ease-in-out ${
+              activeIndex.isNeural ? "h-[420px]" : "h-0"
+            }`}
+          >
             <Carousel />
           </div>
           <ResultsContainer />
