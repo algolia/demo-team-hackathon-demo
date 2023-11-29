@@ -31,7 +31,6 @@ const Hit = ({ hit }: { hit: BaseHit }) => {
 
 function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
   const { hits } = useHits(props);
-  console.log(hits);
 
   return (
     <div className="flex flex-wrap w-full h-[30rem] overflow-scroll">

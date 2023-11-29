@@ -1,24 +1,28 @@
+
 import algoliasearch from "algoliasearch/lite";
 import "@algolia/satellite/satellite.min.css";
 import { Configure, InstantSearch } from "react-instantsearch";
 import Homepage from "@/pages/Homepage";
 import { RecoilRoot } from "recoil";
 
-// To test replace with our own
+
 function App() {
   const searchClient = algoliasearch(
-    "Q6N17K5UHW",
-    "5b40da503669ba0a30f39a990ff80a65"
-  );
+    'O7KBN4GOML',
+    '5fd33be39e68c5459847843dbda5fa7c'
+  )
 
   return (
     <RecoilRoot>
-      <InstantSearch searchClient={searchClient} indexName="electronics_ns">
-        <Configure hitsPerPage={12} />
+      <Configure hitsPerPage={12} />
+      <InstantSearch
+        searchClient={searchClient}
+        indexName="mate_team_off_white"
+      >
         <Homepage />
       </InstantSearch>
     </RecoilRoot>
-  );
+  )
 }
 
-export default App;
+export default App
