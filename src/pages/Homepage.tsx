@@ -1,25 +1,47 @@
 // ASSETS
-import home1 from "@/assets/images/home1.png";
-import home2 from "@/assets/images/home2.png";
-import home3 from "@/assets/images/home3.png";
-import home4 from "@/assets/images/home4.png";
-import home5 from "@/assets/images/home5.png";
-import home6 from "@/assets/images/home6.png";
-import home7 from "@/assets/images/home7.png";
-import home8 from "@/assets/images/home8.png";
-import footer from "@/assets/images/footer.png";
-import CodeModal from "../components/CodeModal";
+import home1 from '@/assets/images/home1.png'
+import home2 from '@/assets/images/home2.png'
+import home3 from '@/assets/images/home3.png'
+import home4 from '@/assets/images/home4.png'
+import home5 from '@/assets/images/home5.png'
+import home6 from '@/assets/images/home6.png'
+import home7 from '@/assets/images/home7.png'
+import home8 from '@/assets/images/home8.png'
+import footer from '@/assets/images/footer.png'
+import CodeModal from '../components/CodeModal'
 import SearchBox from '@/components/SearchBox'
 import ResultsContainer from '@/components/resultsContainer'
+import { Toggle } from '@algolia/satellite'
+import { IndexAtom, indexAtom } from '@/recoil/neuralToggle'
+import { useRecoilState } from 'recoil'
 
 const Homepage = () => {
+  const [activeIndex, setActiveIndex] = useRecoilState<IndexAtom>(indexAtom)
+
+  const handleToggleChange = (value: boolean) => {
+    setActiveIndex({
+      isNeural: value,
+      name: value ? 'mate_team_off_white_ns' : 'mate_team_off_white',
+    })
+  }
+
   return (
     <div>
       <CodeModal />
       <img src={home1} alt="home1" />
       <section className="flex flex-col items-center py-32 bg-[#000034]">
         <div className="w-[90%] shadow-custom bg-white rounded-[16px] py-12 px-8">
-          <SearchBox />
+          <div className="flex items-center gap-12">
+            <SearchBox />
+            <div className="flex items-center gap-2">
+              <Toggle
+                onChange={(e) => handleToggleChange(e.target.checked)}
+                checked={activeIndex.isNeural}
+                color="#013EFF"
+              />
+              <p className="font-medium text-md text-aloglia-xenonDark">AI</p>
+            </div>
+          </div>
           <ResultsContainer />
         </div>
       </section>

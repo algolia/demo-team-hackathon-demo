@@ -17,6 +17,7 @@
 */
 * {
   margin: 0;
+  outline: none;
 }
 /*
   Typographic tweaks!
@@ -90,6 +91,19 @@ li {
     #0db7eb,
     #1e59ff
   );
+}
+
+/* SATELLITE */
+
+.stl-toggle,
+.stl-toggle:after,
+input:focus ~ .stl-toggle {
+  outline: none;
+}
+
+.stl-toggle-handle.stl-toggle-checked ~ .stl-toggle {
+  outline: none;
+  background: #022eb9;
 }
 
 @keyframes AnimationName {
