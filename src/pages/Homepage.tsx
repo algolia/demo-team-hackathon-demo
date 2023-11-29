@@ -11,6 +11,7 @@ import footer from '@/assets/images/footer.png'
 import CodeModal from '../components/CodeModal'
 import SearchBox from '@/components/SearchBox'
 import ResultsContainer from '@/components/resultsContainer'
+import Carousel from '@/components/Carousel'
 import { Toggle } from '@algolia/satellite'
 import { IndexAtom, indexAtom } from '@/recoil/neuralToggle'
 import { useRecoilState } from 'recoil'
@@ -35,13 +36,12 @@ const Homepage = () => {
           <div className="flex items-center gap-12">
             <SearchBox />
             <div className="flex items-center gap-2">
-              <Toggle
-                onChange={(e) => handleToggleChange(e.target.checked)}
-                checked={activeIndex.isNeural}
-                color="#013EFF"
-              />
+              <Toggle onChange={(e) => handleToggleChange(e.target.checked)} checked={activeIndex.isNeural} color="#013EFF" />
               <p className="font-medium text-md text-aloglia-xenonDark">AI</p>
             </div>
+          </div>
+          <div className={`overflow-hidden transition-all ease-in-out ${activeIndex.isNeural ? 'h-[420px]' : 'h-0'}`}>
+            <Carousel />
           </div>
           <ResultsContainer />
         </div>

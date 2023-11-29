@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@algolia/satellite": "^1.0.0-beta.171",
+    "@algolia/ui-components-horizontal-slider-react": "^1.2.2",
+    "@algolia/ui-components-horizontal-slider-theme": "^1.2.2",
     "@marcreichel/tailwind-css-properties": "^1.5.1",
     "@tailwindcss/container-queries": "^0.1.1",
     "ace-builds": "^1.31.2",
