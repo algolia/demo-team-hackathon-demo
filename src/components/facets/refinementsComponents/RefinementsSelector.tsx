@@ -1,11 +1,16 @@
 import { useComponentVisible } from '@/hooks/useComponentVisible'
+
+import CodeRevealButton from '@/components/CodeRevealButton'
+import { useState } from 'react'
+
 import { ChevronDown, ChevronUp } from 'react-feather'
 import { UseRefinementListProps, useRefinementList } from 'react-instantsearch'
 
 const RefinementsSelector = ({
   label,
+  jsCode,
   ...props
-}: UseRefinementListProps & { label: string }) => {
+}: UseRefinementListProps & { label: string; jsCode: string }) => {
   const { items, refine } = useRefinementList(props)
 
   const handleItemClick = (value: string) => {
@@ -25,7 +30,10 @@ const RefinementsSelector = ({
         <p className="text-base font-medium text-colorBp-refinementBadgeTextColor">
           {label}
         </p>
-        {isComponentVisible ? <ChevronUp /> : <ChevronDown />}
+        <div className="flex items-center gap-2">
+          <CodeRevealButton jsCode={jsCode} />
+          {isComponentVisible ? <ChevronUp /> : <ChevronDown />}
+        </div>
       </div>
       <div
         className={`absolute bg-white w-full p-2 left-0 top-12 transition-opacity duration-300 ${
