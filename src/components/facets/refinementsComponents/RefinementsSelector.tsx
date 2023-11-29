@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useComponentVisible } from '@/hooks/useComponentVisible'
 import { ChevronDown, ChevronUp } from 'react-feather'
 import { UseRefinementListProps, useRefinementList } from 'react-instantsearch'
 
@@ -7,27 +7,29 @@ const RefinementsSelector = ({
   ...props
 }: UseRefinementListProps & { label: string }) => {
   const { items, refine } = useRefinementList(props)
-  const [isOpened, setIsOpened] = useState<boolean>(false)
 
   const handleItemClick = (value: string) => {
     refine(value)
-    setIsOpened(false)
   }
+
+  const { ref, setIsComponentVisible, isComponentVisible } =
+    useComponentVisible(false)
 
   return (
     <div
-      className="border-[1px] border-gray-200 p-2 w-1/5 items-start cursor-pointer relative"
-      onClick={() => setIsOpened(!isOpened)}
+      className="relative z-20 items-start w-1/5 p-2 border border-gray-200 rounded cursor-pointer"
+      onClick={() => setIsComponentVisible(!isComponentVisible)}
+      ref={ref}
     >
       <div className="flex justify-between">
         <p className="text-base font-medium text-colorBp-refinementBadgeTextColor">
           {label}
         </p>
-        {isOpened ? <ChevronUp /> : <ChevronDown />}
+        {isComponentVisible ? <ChevronUp /> : <ChevronDown />}
       </div>
       <div
         className={`absolute bg-white w-full p-2 left-0 top-12 transition-opacity duration-300 ${
-          isOpened ? 'opacity-100' : 'opacity-0'
+          isComponentVisible ? 'opacity-100' : 'opacity-0'
         }`}
       >
         {items.map((item) => (

@@ -1,34 +1,64 @@
-import { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
 import { useSortBy, UseSortByProps } from 'react-instantsearch'
+import { useComponentVisible } from '@/hooks/useComponentVisible'
 
-type OptionType = {
-  value: string
-  label: string
+import CodeRevealButton from '@/components/CodeRevealButton'
+
+const sortByCode = `
+import React from 'react';
+import { useSortBy } from 'react-instantsearch';
+
+function SortBy(props) {
+  const { currentRefinement, options, refine } = useSortBy(props);
+
+  return (
+    <select
+      onChange={(event) => refine(event.target.value)}
+      value={currentRefinement}
+    >
+      {options.map((option) => (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </select>
+  );
 }
+`
 
 const CustomSortBy = (props: UseSortByProps) => {
   const { currentRefinement, options, refine } = useSortBy(props)
-  const [isOpened, setIsOpened] = useState<boolean>(false)
+
+  const { ref, setIsComponentVisible, isComponentVisible } =
+    useComponentVisible(false)
 
   return (
-    <div className="border-[1px] border-gray-200 p-2 w-1/5 items-start cursor-pointer relative">
+    <div
+      className="relative z-30 items-start w-1/5 p-2 border border-gray-200 rounded cursor-pointer"
+      ref={ref}
+    >
       <div
         className="flex justify-between"
-        onClick={() => setIsOpened(!isOpened)}
+        onClick={() => setIsComponentVisible(!isComponentVisible)}
       >
         <p className="text-base font-medium text-colorBp-refinementBadgeTextColor">
-          {currentRefinement.label}
+          {currentRefinement === 'mate_team_off_white'
+            ? 'Featured'
+            : currentRefinement === 'mate_team_off_white_price_asc'
+            ? 'Price (asc)'
+            : 'Price (desc)'}
         </p>
-        {isOpened ? <ChevronUp /> : <ChevronDown />}
+        <div className="flex items-center gap-2">
+          <CodeRevealButton jsCode={sortByCode} />
+          {isComponentVisible ? <ChevronUp /> : <ChevronDown />}
+        </div>
       </div>
       <div
-        className={`absolute bg-white w-full p-2 left-0 top-12 transition-opacity duration-300 ${
-          isOpened ? 'opacity-100' : 'opacity-0'
+        className={`absolute bg-white w-full p-2 left-0 top-12 transition-opacity  duration-300 ${
+          isComponentVisible ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        {options.map((optionString: string, index: number) => {
-          const option: OptionType = JSON.parse(optionString)
+        {options.map((option, index: number) => {
           return (
             <li
               onClick={() => {
