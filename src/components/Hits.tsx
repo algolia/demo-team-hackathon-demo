@@ -30,20 +30,22 @@ export const Hit = ({ hit }: { hit: BaseHit }) => {
   const [neuralBorder, setNeuralBorder] = useState(false)
   const [activeIndex, setActiveIndex] = useRecoilState<IndexAtom>(indexAtom)
   return (
-    <div className={`w-4/5 rounded-[9px] relative  p-0 mt-8 ${activeIndex.isNeural && neuralBorder && `background-animate`}`}>
+    <div className={`rounded-[9px] relative  p-0 ${activeIndex.isNeural && neuralBorder && `background-animate`}`}>
       <div className="relative">
         <NeuralBadge rankingInfo={hit._rankingInfo} setNeuralBorder={setNeuralBorder} />
         <div className="mx-auto w-full p-[2px] ">
           <img
-            className="w-full aspect-[5/7] rounded-lg object-cover border-[3px] border-white"
+            className="w-full aspect-[9/12] rounded-lg bg-white object-cover border-[2px] border-white"
             src={hit.image_link as string}
             alt={hit.title as string}
             onError={(e) => {
               console.log(e)
             }}
           />
-          <div className="absolute  -translate-x-1/2 left-1/2 bottom-2 w-auto px-4 py-2 bg-white border border-gray">
-            <h2 className="text-sm text-center font-semibold text-black">{(hit.title as string).split(' - ')[1]}</h2>
+          <div className="absolute -translate-x-1/2 px-3 left-1/2 bottom-3 w-full">
+            <h2 className="text-xs text-center p-1.5 bg-white border w-auto border-gray font-semibold text-black">
+              {(hit.title as string).split(' - ')[1]}
+            </h2>
           </div>
         </div>
       </div>
@@ -55,12 +57,12 @@ function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
   const { hits } = useHits(props)
 
   return (
-    <div className="relative flex flex-wrap w-full h-[30rem] overflow-scroll">
+    <div className="hits-scroll relative grid grid-cols-6 gap-6 w-full h-[30rem] overflow-y-auto">
       <div className="absolute top-0 right-4">
-        <CodeRevealButton jsCode={statsCode} />
+        <CodeRevealButton jsCode={statsCode} openDirection="left" />
       </div>
       {hits.map((hit) => (
-        <div key={hit.objectID} className="w-1/4 p-2">
+        <div key={hit.objectID} className="w-full">
           <Hit hit={hit} />
         </div>
       ))}
