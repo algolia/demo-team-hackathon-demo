@@ -64,7 +64,7 @@ export const NeuralBadge = ({ rankingInfo, setNeuralBorder }: any) => {
           )}
         </div>
 
-        {label !== '' && !isScoreActive && (
+        {/* {label !== '' && !isScoreActive && (
           <div
             onClick={() => setIsScoreActive(!isScoreActive)}
             className={`absolute right-3 top-3 z-[22] flex cursor-pointer items-center gap-1 rounded-admin-pill border px-2 py-1 text-sm leading-none transition ${
@@ -73,9 +73,9 @@ export const NeuralBadge = ({ rankingInfo, setNeuralBorder }: any) => {
               label === 'Keyword & Vector' && 'border-violet-500 bg-violet-100 text-violet-500 hover:bg-violet-500 hover:text-white'
             }`}
           >
-            <span className="text-xs font-medium leading-none">{label}</span>
+            <span className="text-[8px] font-medium leading-none">{label}</span>
           </div>
-        )}
+        )} */}
 
         {label !== '' && isScoreActive && (
           <div

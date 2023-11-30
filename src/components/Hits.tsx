@@ -35,7 +35,7 @@ export const Hit = ({ hit }: { hit: BaseHit }) => {
         <NeuralBadge rankingInfo={hit._rankingInfo} setNeuralBorder={setNeuralBorder} />
         <div className={`mx-auto w-full ${activeIndex.isNeural && neuralBorder && 'p-[2px]'}`}>
           <img
-            className={`w-full aspect-[9/12] rounded-lg bg-white object-cover ${activeIndex.isNeural && neuralBorder && 'border-[2px] border-white'}`}
+            className={`w-full aspect-[9/12] rounded-lg bg-white object-cover ${activeIndex.isNeural && neuralBorder && 'border-[1px] border-white'}`}
             src={hit.image_link as string}
             alt={hit.title as string}
             onError={(e) => {
@@ -58,14 +58,20 @@ function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
 
   return (
     <div className="hits-view w-full">
-      <div className="hits-scroll relative grid grid-cols-4 gap-4 w-full h-[30rem] overflow-y-auto pr-2">
-        {hits.map((hit) => (
-          <div key={hit.objectID} className="w-full">
-            <Hit hit={hit} />
-          </div>
-        ))}
+      <div className="hits-scroll relative grid grid-cols-4 gap-4 w-full min-h-[8rem] max-h-[16rem] overflow-y-auto pr-2">
+        {hits?.length > 0 ? (
+          <>
+            {hits.map((hit) => (
+              <div key={hit.objectID} className="w-full">
+                <Hit hit={hit} />
+              </div>
+            ))}
+          </>
+        ) : (
+          <p className="col-span-4 text-center mt-4">No search Results...</p>
+        )}
       </div>
-      <div className="absolute bottom-4 right-4">
+      <div className="absolute bottom-0 right-0">
         <CodeRevealButton jsCode={statsCode} openDirection="upLeft" />
       </div>
     </div>
