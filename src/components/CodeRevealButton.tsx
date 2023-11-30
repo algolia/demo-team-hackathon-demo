@@ -1,7 +1,7 @@
 import { useComponentVisible } from "@/hooks/useComponentVisible";
-
 import { Code } from "react-feather";
 import CodeBlock from "./CodeBlock";
+
 interface Props {
   jsCode: string;
   openDirection?: "left" | "right" | "center" | "upLeft";

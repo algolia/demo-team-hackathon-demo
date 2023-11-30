@@ -1,5 +1,5 @@
-import { useStats } from 'react-instantsearch'
-import CodeRevealButton from '@/components/CodeRevealButton'
+import { useStats } from "react-instantsearch";
+import CodeRevealButton from "@/components/CodeRevealButton";
 
 const statsCode = `
 import React from 'react';
@@ -14,22 +14,25 @@ function CustomStats() {
       {processingTimeMS.toLocaleString()}ms for <q>{query}</q>.
     </span>
   );
-}`
+}`;
 
 function CustomStats() {
-  const { nbHits, processingTimeMS, query } = useStats()
+  const { nbHits, processingTimeMS } = useStats();
 
   return (
     <div className="flex items-center gap-1 text-xs">
       <p>
-        <span className="font-bold text-algolia-xenonDark">{nbHits.toLocaleString()}</span> results in{' '}
+        <span className="font-bold text-algolia-xenonDark">
+          {nbHits.toLocaleString()}
+        </span>{" "}
+        results in{" "}
       </p>
       <p className="font-bold">{processingTimeMS.toLocaleString()}ms</p>
       <div className="ml-1">
         <CodeRevealButton jsCode={statsCode} openDirection="left" />
       </div>
     </div>
-  )
+  );
 }
 
-export default CustomStats
+export default CustomStats;

@@ -28,7 +28,7 @@ export default CustomHits
 
 export const Hit = ({ hit }: { hit: BaseHit }) => {
   const [neuralBorder, setNeuralBorder] = useState(false)
-  const [activeIndex, setActiveIndex] = useRecoilState<IndexAtom>(indexAtom)
+  const [activeIndex] = useRecoilState<IndexAtom>(indexAtom)
   return (
     <div className={`rounded-[9px] relative  p-0 ${activeIndex.isNeural && neuralBorder && `background-animate`}`}>
       <div className="relative">
