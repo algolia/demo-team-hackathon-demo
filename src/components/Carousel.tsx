@@ -38,15 +38,17 @@ const Carousel = () => {
         hitsPerPage={8}
         ruleContexts={["trending-carousel"]}
       />
-      <div className="bg-colorBp-100 px-3 rounded-md my-4 mb-0 pb-4 pt-2.5 md:px-4 relative">
-        <div className="absolute right-2 top-2">
-          <CodeRevealButton jsCode={carouselCode} openDirection="left" />
-        </div>
-        <div className="w-full mx-auto max-w-screen-2xl">
-          <h2 className="mb-2 text-center text-sm font-semibold leading-none text-[#000034] lg:text-base">
-            Trending Products
-          </h2>
-          <CarouselHits />
+      <div className="p-[3px] bg-white rounded-lg carousel-background my-4">
+        <div className="bg-colorBp-100 px-3 rounded-md  pb-4 pt-2.5 md:px-4 relative ">
+          <div className="absolute right-2 top-2">
+            <CodeRevealButton jsCode={carouselCode} openDirection="left" />
+          </div>
+          <div className="w-full mx-auto max-w-screen-2xl">
+            <h2 className="mb-2 text-center text-sm font-semibold leading-none text-[#000034] lg:text-base">
+              Trending Products
+            </h2>
+            <CarouselHits />
+          </div>
         </div>
       </div>
     </Index>
