@@ -5,16 +5,14 @@ import Facets from './facets/Facets'
 
 const ResultsContainer = () => {
   return (
-    <div className="flex flex-col items-center justify-center my-2">
+    <div className="flex flex-col items-center justify-center">
       <div className="w-full">
-        <div className="flex items-center justify-between ">
+        <div className="flex justify-between my-4">
+          <Facets />
           <CustomStats />
         </div>
-        <div>
-          <Facets />
-        </div>
       </div>
-      <div>
+      <div className="w-full">
         <CustomHits />
       </div>
     </div>

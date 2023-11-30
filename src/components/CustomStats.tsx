@@ -35,7 +35,9 @@ function CustomStats() {
           ''
         )}
       </p>
-      <CodeRevealButton jsCode={statsCode} openDirection="right" />
+      <div className="ml-1">
+        <CodeRevealButton jsCode={statsCode} openDirection="left" />
+      </div>
     </div>
   )
 }

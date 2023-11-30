@@ -32,12 +32,12 @@ const Homepage = () => {
       <CodeModal />
       <img className="w-full" src={home1} alt="home1" />
       <section className="flex flex-col items-center py-32 bg-[#000034]">
-        <div className="w-[90%] shadow-custom bg-white rounded-[16px] py-12 px-8">
-          <div className="flex items-center gap-12">
+        <div className="w-[90%] shadow-custom bg-white rounded-[16px] py-8 px-8">
+          <div className="flex items-center gap-4">
             <SearchBox />
             <div className="flex items-center gap-2">
               <Toggle onChange={(e) => handleToggleChange(e.target.checked)} checked={activeIndex.isNeural} color="#013EFF" />
-              <p className="font-medium text-md text-aloglia-xenonDark">AI</p>
+              <p className="font-bold text-sm text-aloglia-xenonDark">AI</p>
             </div>
           </div>
           <div className={`overflow-hidden transition-all ease-in-out ${activeIndex.isNeural ? 'h-[420px]' : 'h-0'}`}>

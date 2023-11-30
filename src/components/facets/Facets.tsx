@@ -213,24 +213,26 @@ function CustomRefinementList(props) {
 `
 
   return (
-    <div className="m-auto rounded-lg">
-      <div className="flex justify-between pb-4">
-        <div className="flex flex-wrap items-center justify-start w-full gap-2">
-          {items.map((item) => (
-            <CurrentRefinements item={item} refine={refine} />
-          ))}
-        </div>
-        {items.length > 0 && (
-          <div className="flex items-start justify-start">
-            <ClearRefinements />
+    <div className="flex flex-col gap-y-2">
+      {items?.length > 0 && (
+        <div className="flex justify-between">
+          <div className="flex flex-wrap items-center justify-start w-full gap-2">
+            {items.map((item) => (
+              <CurrentRefinements item={item} refine={refine} />
+            ))}
           </div>
-        )}
-      </div>
-      <div className="flex w-full justify-center gap-2">
-        <RefinementsSelector attribute="brand" label="Brand" jsCode={brandJsCode} />
-        <RefinementsSelector attribute="gender" label="Gender" jsCode={genderJsCode} />
-        <RefinementsSelector attribute="material" label="Material" limit={5} jsCode={materialJsCode} />
-        <RefinementsSelector attribute="age_group" label="Age" jsCode={ageJsCode} />
+          {items.length > 0 && (
+            <div className="flex items-start justify-start">
+              <ClearRefinements />
+            </div>
+          )}
+        </div>
+      )}
+      <div className="flex w-full gap-2">
+        <RefinementsSelector attribute="brand" label="Brand" openDirection={'right'} jsCode={brandJsCode} />
+        <RefinementsSelector attribute="gender" label="Gender" openDirection={'right'} jsCode={genderJsCode} />
+        <RefinementsSelector attribute="material" label="Material" limit={5} openDirection={'center'} jsCode={materialJsCode} />
+        <RefinementsSelector attribute="age_group" label="Age" openDirection={'center'} jsCode={ageJsCode} />
       </div>
     </div>
   )
