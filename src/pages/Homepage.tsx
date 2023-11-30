@@ -43,7 +43,7 @@ const Homepage = () => {
       <CodeModal />
       <img className="w-full" src={home1} alt="home1" />
       <section className="flex flex-col items-center py-32 bg-[#000034]">
-        <div className="w-[90%] shadow-custom bg-white rounded-[16px] py-12 px-12 gap-12 grid grid-cols-1 items-center xl:grid-cols-2">
+        <div className="w-[90%] shadow-custom bg-white rounded-[16px] py-12 px-12 gap-12 grid grid-cols-1 max-w-[1440px] items-center xl:grid-cols-2">
           <div className="xl:px-4">
             <p className="text-4xl leading-tight text-[#36395a] font-medium mb-4">AI Search That Understands</p>
             <p className="text-xl text-[#5a5e9a] mb-8">
