@@ -9,75 +9,26 @@ import {
 const Facets = (props: CurrentRefinementsProps) => {
   const { items, refine } = useCurrentRefinements(props);
 
-  const brandJsCode = `
-  import React from 'react';
-  import algoliasearch from 'algoliasearch/lite';
-  import { InstantSearch, RefinementList } from 'react-instantsearch';
+  const brandJsCode = `import React from 'react';
+import algoliasearch from 'algoliasearch/lite';
+import { InstantSearch, RefinementList } from 'react-instantsearch';
 
-  const searchClient = algoliasearch('O7KBN4GOML', '5fd33be39e68c5459847843dbda5fa7c');
+const searchClient = algoliasearch('O7KBN4GOML', 'SEARCH_API_KEY');
 
-  function App() {
-    return (
-      <InstantSearch indexName="instant_search" searchClient={searchClient}>
-        <RefinementList attribute="brand" />
-      </InstantSearch>
-    );
-}
-
-// facet.tsx
-import React from 'react';
-import { useRefinementList } from 'react-instantsearch';
-
-function CustomRefinementList(props) {
-  const {
-    items,
-    refine,
-    searchForItems,
-    canToggleShowMore,
-    isShowingMore,
-    toggleShowMore,
-  } = useRefinementList(props);
-
+function App() {
   return (
-    <>
-      <input
-        type="search"
-        autoComplete="off"
-        autoCorrect="off"
-        autoCapitalize="off"
-        spellCheck={false}
-        maxLength={512}
-        onChange={(event) => searchForItems(event.currentTarget.value)}
-      />
-      <ul>
-        {items.map((item) => (
-          <li key={item.label}>
-            <label>
-              <input
-                type="checkbox"
-                checked={item.isRefined}
-                onChange={() => refine(item.value)}
-              />
-              <span>{item.label}</span>
-              <span>({item.count})</span>
-            </label>
-          </li>
-        ))}
-      </ul>
-      <button onClick={toggleShowMore} disabled={!canToggleShowMore}>
-        {isShowingMore ? 'Show less' : 'Show more'}
-      </button>
-    </>
+    <InstantSearch indexName="instant_search" searchClient={searchClient}>
+      <RefinementList attribute="brand" />
+    </InstantSearch>
   );
 }
 `;
 
-  const genderJsCode = `
-import React from 'react';
+  const genderJsCode = `import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, RefinementList } from 'react-instantsearch';
 
-const searchClient = algoliasearch('O7KBN4GOML', '5fd33be39e68c5459847843dbda5fa7c');
+const searchClient = algoliasearch('O7KBN4GOML', 'SEARCH_API_KEY');
 
 function App() {
   return (
@@ -88,68 +39,19 @@ function App() {
 }
 `;
 
-  const ageJsCode = `
-import React from 'react';
+  const ageJsCode = `import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, RefinementList } from 'react-instantsearch';
 
-const searchClient = algoliasearch('O7KBN4GOML', '5fd33be39e68c5459847843dbda5fa7c');
+const searchClient = algoliasearch('O7KBN4GOML', 'SEARCH_API_KEY');
 
 function App() {
   return (
     <InstantSearch indexName="instant_search" searchClient={searchClient}>
-      <RefinementList attribute="age_group" />
+      <RefinementList attribute="age" />
     </InstantSearch>
   );
 }
-
-// facet.tsx
-import React from 'react';
-import { useRefinementList } from 'react-instantsearch';
-
-function CustomRefinementList(props) {
-  const {
-    items,
-    refine,
-    searchForItems,
-    canToggleShowMore,
-    isShowingMore,
-    toggleShowMore,
-  } = useRefinementList(props);
-
-  return (
-    <>
-      <input
-        type="search"
-        autoComplete="off"
-        autoCorrect="off"
-        autoCapitalize="off"
-        spellCheck={false}
-        maxLength={512}
-        onChange={(event) => searchForItems(event.currentTarget.value)}
-      />
-      <ul>
-        {items.map((item) => (
-          <li key={item.label}>
-            <label>
-              <input
-                type="checkbox"
-                checked={item.isRefined}
-                onChange={() => refine(item.value)}
-              />
-              <span>{item.label}</span>
-              <span>({item.count})</span>
-            </label>
-          </li>
-        ))}
-      </ul>
-      <button onClick={toggleShowMore} disabled={!canToggleShowMore}>
-        {isShowingMore ? 'Show less' : 'Show more'}
-      </button>
-    </>
-  );
-}
-
 `;
 
   return (
