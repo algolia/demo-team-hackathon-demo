@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 /* Your custom styles go here */
 
@@ -88,7 +88,25 @@ li {
   -webkit-animation: AnimationName 3s ease infinite;
   -moz-animation: AnimationName 3s ease infinite;
   animation: AnimationName 10s ease infinite;
-  background-image: linear-gradient(to right, #1e59ff, #0db7eb, #ceff00, #0db7eb, #1e59ff);
+  background-image: linear-gradient(
+    to right,
+    #1e59ff,
+    #0db7eb,
+    #ceff00,
+    #0db7eb,
+    #1e59ff
+  );
+}
+
+.carousel-background {
+  background-size: 400%;
+
+  background-image: linear-gradient(
+    to right,
+    rgb(246, 193, 134),
+    rgba(255, 42, 106)
+  );
+  animation: AnimationName 4s ease infinite;
 }
 
 /* SATELLITE */
@@ -151,18 +169,23 @@ input:focus ~ .stl-toggle {
   position: relative;
 }
 .hits-view:after {
-  content: ' ';
+  content: " ";
   position: absolute;
   bottom: 0;
   width: 100%;
   background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
   height: 64px;
 }
 
 /* Buttons */
 .algolia-button {
-  box-shadow: rgba(45, 35, 66, 0.3) 0px 2px 8px, rgb(2, 46, 185) 0px -3px 0px 0px inset;
+  box-shadow: rgba(45, 35, 66, 0.3) 0px 2px 8px,
+    rgb(2, 46, 185) 0px -3px 0px 0px inset;
   background-color: #003dff;
   color: white;
 }
@@ -175,12 +198,16 @@ input:focus ~ .stl-toggle {
 }
 
 .uic-HorizontalSlider-container:after {
-  content: ' ';
+  content: " ";
   position: absolute;
   right: 0;
   top: 0;
   height: 100%;
   width: 36px;
   background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(244, 244, 245, 0) 0%, rgba(244, 244, 245, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(244, 244, 245, 0) 0%,
+    rgba(244, 244, 245, 1) 100%
+  );
 }
