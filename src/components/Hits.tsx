@@ -42,8 +42,8 @@ export const Hit = ({ hit }: { hit: BaseHit }) => {
               console.log(e)
             }}
           />
-          <div className="absolute -translate-x-1/2 px-3 left-1/2 bottom-3 w-full">
-            <h2 className="text-xs text-center p-1.5 bg-white border rounded-md w-auto border-gray font-semibold text-black">
+          <div className="absolute -translate-x-1/2 px-1 left-1/2 bottom-1 w-full shadow-sm">
+            <h2 className="text-[10px] leading-snug text-center p-1.5 bg-white border rounded-md w-auto border-gray font-semibold text-black">
               {(hit.title as string).split(' - ')[1]}
             </h2>
           </div>
