@@ -58,7 +58,7 @@ function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
 
   return (
     <div className="hits-view w-full">
-      <div className="hits-scroll relative grid grid-cols-4 gap-4 w-full h-[30rem] overflow-y-auto pr-2">
+      <div className="hits-scroll relative grid grid-cols-3 gap-4 w-full h-[30rem] overflow-y-auto pr-2">
         {hits.map((hit) => (
           <div key={hit.objectID} className="w-full">
             <Hit hit={hit} />

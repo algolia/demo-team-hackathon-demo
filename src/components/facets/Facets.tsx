@@ -229,10 +229,10 @@ function CustomRefinementList(props) {
         </div>
       )}
       <div className="flex w-full gap-2">
-        <RefinementsSelector attribute="brand" label="Brand" openDirection={'right'} jsCode={brandJsCode} />
-        <RefinementsSelector attribute="gender" label="Gender" openDirection={'right'} jsCode={genderJsCode} />
-        <RefinementsSelector attribute="material" label="Material" limit={5} openDirection={'center'} jsCode={materialJsCode} />
-        <RefinementsSelector attribute="age_group" label="Age" openDirection={'center'} jsCode={ageJsCode} />
+        <RefinementsSelector attribute="brand" label="Brand" openDirection={'center'} jsCode={brandJsCode} />
+        <RefinementsSelector attribute="gender" label="Gender" openDirection={'center'} jsCode={genderJsCode} />
+        {/* <RefinementsSelector attribute="material" label="Material" limit={5} openDirection={'center'} jsCode={materialJsCode} /> */}
+        <RefinementsSelector attribute="age_group" label="Age" openDirection={'left'} jsCode={ageJsCode} />
       </div>
     </div>
   )

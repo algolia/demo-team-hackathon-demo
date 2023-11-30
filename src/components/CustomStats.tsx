@@ -22,7 +22,7 @@ function CustomStats() {
   return (
     <div className="flex items-center gap-1 text-xs">
       <p>
-        <span className="font-bold text-algolia-xenonDark">{nbHits.toLocaleString()}</span> results found in{' '}
+        <span className="font-bold text-algolia-xenonDark">{nbHits.toLocaleString()}</span> results in{' '}
       </p>
       <p>
         {processingTimeMS.toLocaleString()}ms
