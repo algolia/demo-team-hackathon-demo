@@ -1,3 +1,5 @@
+import { useRef, useEffect } from 'react'
+
 // ASSETS
 import home1 from '@/assets/images/home1.png'
 import home2 from '@/assets/images/home2.png'
@@ -20,12 +22,21 @@ import CtaButton from '@/components/CtaButton'
 const Homepage = () => {
   const [activeIndex, setActiveIndex] = useRecoilState<IndexAtom>(indexAtom)
 
+  const recoRef = useRef<HTMLDivElement>(null)
+
   const handleToggleChange = (value: boolean) => {
     setActiveIndex({
       isNeural: value,
       name: value ? 'mate_team_off_white_ns' : 'mate_team_off_white',
     })
   }
+
+  useEffect(() => {
+    const recoElement = recoRef.current
+    if (recoElement) {
+      recoElement.style.height = activeIndex.isNeural ? `${recoElement.scrollHeight}px` : '0px'
+    }
+  }, [activeIndex.isNeural])
 
   return (
     <div>
@@ -44,7 +55,7 @@ const Homepage = () => {
                 <p className="font-bold text-sm text-aloglia-xenonDark">AI</p>
               </div>
             </div>
-            <div className={`overflow-hidden transition-all ease-in-out ${activeIndex.isNeural ? 'h-[420px]' : 'h-0'}`}>
+            <div ref={recoRef} className={`overflow-hidden transition-all ease-in-out ${activeIndex.isNeural ? '' : 'h-0'}`}>
               <Carousel />
             </div>
             <ResultsContainer />
