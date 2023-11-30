@@ -1,10 +1,7 @@
 import CurrentRefinements from './refinementsComponents/CurrentRefinements'
 import ClearRefinements from './refinementsComponents/ClearRefinements'
 import RefinementsSelector from './refinementsComponents/RefinementsSelector'
-import {
-  CurrentRefinementsProps,
-  useCurrentRefinements,
-} from 'react-instantsearch'
+import { CurrentRefinementsProps, useCurrentRefinements } from 'react-instantsearch'
 
 const Facets = (props: CurrentRefinementsProps) => {
   const { items, refine } = useCurrentRefinements(props)
@@ -216,7 +213,7 @@ function CustomRefinementList(props) {
 `
 
   return (
-    <div className="w-2/3 p-4 m-auto rounded-lg">
+    <div className="m-auto rounded-lg">
       <div className="flex justify-between pb-4">
         <div className="flex flex-wrap items-center justify-start w-full gap-2">
           {items.map((item) => (
@@ -229,27 +226,11 @@ function CustomRefinementList(props) {
           </div>
         )}
       </div>
-      <div className="flex w-full gap-2">
-        <RefinementsSelector
-          attribute="brand"
-          label="Brand"
-          jsCode={brandJsCode}
-        />
-        <RefinementsSelector
-          attribute="gender"
-          label="Gender"
-          jsCode={genderJsCode}
-        />
-        <RefinementsSelector
-          attribute="material"
-          label="Material"
-          jsCode={materialJsCode}
-        />
-        <RefinementsSelector
-          attribute="age_group"
-          label="Age"
-          jsCode={ageJsCode}
-        />
+      <div className="flex w-full justify-center gap-2">
+        <RefinementsSelector attribute="brand" label="Brand" jsCode={brandJsCode} />
+        <RefinementsSelector attribute="gender" label="Gender" jsCode={genderJsCode} />
+        <RefinementsSelector attribute="material" label="Material" limit={5} jsCode={materialJsCode} />
+        <RefinementsSelector attribute="age_group" label="Age" jsCode={ageJsCode} />
       </div>
     </div>
   )

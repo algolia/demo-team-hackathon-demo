@@ -21,14 +21,14 @@ const CodeRevealButton = ({ jsCode, openDirection = 'right' }: Props) => {
   }
 
   return (
-    <div className="relative flex" ref={ref}>
+    <div className="relative self-center" ref={ref}>
       <button
         onClick={revealModal}
-        className={`code-btn z-20 relative rounded w-[28px] flex justify-center items-center transition-all ease-in-out ${
-          isComponentVisible ? 'bg-[#002451] rounded-br-none rounded-bl-none' : 'hover:bg-colorBp-200 '
+        className={`code-btn z-20 relative rounded w-[24px] flex justify-center h-[24px] items-center transition-all ease-in-out ${
+          isComponentVisible ? 'bg-[#002451] rounded-br-none rounded-bl-none self-end' : 'hover:bg-[#002451]  bg-algolia-xenon rounded-[36px]'
         }`}
       >
-        <Code color={isComponentVisible ? 'white' : 'black'} />
+        <Code color={isComponentVisible ? 'white' : 'white'} />
       </button>
       {/* {isComponentVisible && <div className="h-4 w-4 absolute left-1/2 z-10 bg-colorBp-600 -translate-x-1/2 -bottom-1.5 rotate-45"></div>} */}
       <div

@@ -16,15 +16,15 @@ const RefinementsSelector = ({ label, jsCode, ...props }: UseRefinementListProps
 
   return (
     <div
-      className="relative items-start w-1/5 p-2 border border-gray-200 rounded cursor-pointer"
+      className="relative items-start p-2 border border-gray-200 rounded cursor-pointer"
       onClick={() => setIsComponentVisible(!isComponentVisible)}
       ref={ref}
     >
-      <div className="flex justify-between">
-        <p className="text-base font-medium text-colorBp-refinementBadgeTextColor">{label}</p>
-        <div className="flex items-center gap-2">
-          <CodeRevealButton jsCode={jsCode} openDirection="center" />
+      <div className="flex items-center justify-between">
+        <p className="text-xs font-semibold text-colorBp-refinementBadgeTextColor">{label}</p>
+        <div className="flex items-center gap-4">
           {isComponentVisible ? <ChevronUp /> : <ChevronDown />}
+          <CodeRevealButton jsCode={jsCode} openDirection="center" />
         </div>
       </div>
       <div
@@ -36,7 +36,7 @@ const RefinementsSelector = ({ label, jsCode, ...props }: UseRefinementListProps
           <p
             key={item.label}
             onClick={() => handleItemClick(item.value)}
-            className={`${item?.isRefined ? 'bg-black text-white' : 'hover:bg-gray-200'} p-2`}
+            className={`text-sm ${item?.isRefined ? 'bg-black text-white' : 'hover:bg-gray-200'} p-2`}
           >
             {item.label}
           </p>
