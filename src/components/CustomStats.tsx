@@ -22,20 +22,12 @@ function CustomStats() {
   return (
     <div className="flex items-center gap-1 text-xs">
       <p>
-        <span className="font-bold text-algolia-xenonDark">{nbHits.toLocaleString()}</span> results found in{' '}
+        <span className="font-bold text-algolia-xenonDark">{nbHits.toLocaleString()}</span> results in{' '}
       </p>
-      <p>
-        {processingTimeMS.toLocaleString()}ms
-        {query ? (
-          <span>
-            {' '}
-            for <q className="font-bold text-algolia-xenonDark">{query}</q>
-          </span>
-        ) : (
-          ''
-        )}
-      </p>
-      <CodeRevealButton jsCode={statsCode} openDirection="right" />
+      <p className="font-bold">{processingTimeMS.toLocaleString()}ms</p>
+      <div className="ml-1">
+        <CodeRevealButton jsCode={statsCode} openDirection="left" />
+      </div>
     </div>
   )
 }
