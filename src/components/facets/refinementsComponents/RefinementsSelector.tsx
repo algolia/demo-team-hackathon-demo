@@ -29,7 +29,7 @@ const RefinementsSelector = ({ label, jsCode, ...props }: UseRefinementListProps
       </div>
       <div
         className={`absolute bg-white w-full z-30 p-2 left-0 top-12 transition-opacity duration-300 ${
-          isComponentVisible ? 'visible opacity-100' : 'invisible opacity-0'
+          isComponentVisible ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
         }`}
       >
         {items.map((item) => (
