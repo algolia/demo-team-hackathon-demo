@@ -34,7 +34,9 @@ const Homepage = () => {
   useEffect(() => {
     const recoElement = recoRef.current
     if (recoElement) {
-      recoElement.style.height = activeIndex.isNeural ? `${recoElement.scrollHeight}px` : '0px'
+      recoElement.style.height = activeIndex.isNeural
+        ? `${recoElement.scrollHeight}px`
+        : '0px'
     }
   }, [activeIndex.isNeural])
 
@@ -45,9 +47,12 @@ const Homepage = () => {
       <section className="flex flex-col items-center py-32 bg-[#000034]">
         <div className="w-[90%] shadow-custom bg-white rounded-[16px] py-12 px-12 gap-12 grid grid-cols-1 max-w-[1440px] items-center xl:grid-cols-2">
           <div className="xl:px-4">
-            <p className="text-4xl leading-tight text-[#36395a] font-medium mb-4">AI Search That Understands</p>
+            <p className="text-4xl leading-tight text-[#36395a] font-medium mb-4">
+              AI Search That Understands
+            </p>
             <p className="text-xl text-[#5a5e9a] mb-8">
-              Enterprises and developers use Algolia's AI search infrastructure to understand users and show them what they need.
+              Enterprises and developers use Algolia's AI search infrastructure
+              to understand users and show them what they need.
             </p>
             <div className="flex gap-2">
               <button className="uppercase rounded-l-[60px] text-[#36395a] rounded-r-[16px]  tracking-wider text-xs font-bold border-colorBp-300 leading-none pl-8 pr-6 py-3.5 border-2">
@@ -62,11 +67,20 @@ const Homepage = () => {
             <div className="flex items-center gap-4">
               <SearchBox />
               <div className="flex items-center gap-2">
-                <Toggle onChange={(e) => handleToggleChange(e.target.checked)} checked={activeIndex.isNeural} color="#013EFF" />
-                <p className="font-bold text-sm text-aloglia-xenonDark">AI</p>
+                <Toggle
+                  onChange={(e) => handleToggleChange(e.target.checked)}
+                  checked={activeIndex.isNeural}
+                  color="#013EFF"
+                />
+                <p className="text-sm font-bold text-aloglia-xenonDark">AI</p>
               </div>
             </div>
-            <div ref={recoRef} className={`overflow-hidden transition-all ease-in-out ${activeIndex.isNeural ? '' : 'h-0'}`}>
+            <div
+              ref={recoRef}
+              className={`overflow-hidden transition-all ease-in-out ${
+                activeIndex.isNeural ? '' : 'h-0'
+              }`}
+            >
               <Carousel />
             </div>
             <ResultsContainer />

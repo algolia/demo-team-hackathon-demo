@@ -1,18 +1,13 @@
 import { useComponentVisible } from "@/hooks/useComponentVisible";
-
-// import { codeModalState, codeValueState } from '@/recoil/codeModal'
 import { Code } from "react-feather";
 import CodeBlock from "./CodeBlock";
-// import { useSetRecoilState } from 'recoil'
+
 interface Props {
   jsCode: string;
   openDirection?: "left" | "right" | "center" | "upLeft";
 }
 
 const CodeRevealButton = ({ jsCode, openDirection = "right" }: Props) => {
-  // const setModalOpen = useSetRecoilState<boolean>(codeModalState)
-  // const setCodeValue = useSetRecoilState<string>(codeValueState)
-
   const { ref, setIsComponentVisible, isComponentVisible } =
     useComponentVisible(false);
 
@@ -37,7 +32,7 @@ const CodeRevealButton = ({ jsCode, openDirection = "right" }: Props) => {
       >
         <Code color={isComponentVisible ? "white" : "white"} size={12} />
       </button>
-      {/* {isComponentVisible && <div className="h-4 w-4 absolute left-1/2 z-10 bg-colorBp-600 -translate-x-1/2 -bottom-1.5 rotate-45"></div>} */}
+
       <div
         className={`bg-[#002451] rounded-md shadow-xl p-4 z-[100] absolute  ${
           isComponentVisible ? "block" : "hidden"
