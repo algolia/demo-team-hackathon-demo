@@ -52,7 +52,8 @@ To enhance your development experience, we have set up ESLint with a basic confi
 
 Adjust `parserOptions` in `.eslintrc.js` with the following to enable type-awareing:
 
-```javascript
+```
+javascript
 {
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -60,7 +61,8 @@ Adjust `parserOptions` in `.eslintrc.js` with the following to enable type-aware
     "project": ["./tsconfig.json", "./tsconfig.node.json"],
     "tsconfigRootDir": __dirname
   }
-}```
+}
+```
 
 For a more stringent linting process, consider these adjustments:
 
