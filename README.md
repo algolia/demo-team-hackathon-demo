@@ -4,7 +4,7 @@ Welcome to the official repository of "Algolia Reveal," a demonstration built to
 
 ## Introduction
 
-"Algolia Reveal" is a project conceived and developed within an ambitious timeframe of less than one day during our internal Hackathon.
+"Algolia Reveal" is a project conceived and developed within an ambitious timeframe of less than one day during our internal Hackathon. The code might not be perfect or optimise in that regard
 
 Our demonstration offers a hands-on experience that allows developers to:
 
@@ -86,4 +86,3 @@ Although this demo was crafted in a limited timeframe, it stands on the shoulder
 ---
 
 🌟 Enjoy exploring "Algolia Reveal" and don't forget to spread the word if you find it helpful! Your support is greatly appreciated.
-
