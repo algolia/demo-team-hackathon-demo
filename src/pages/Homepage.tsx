@@ -1,15 +1,15 @@
 import { useRef, useEffect } from 'react'
 
 // ASSETS
-import home1 from '@/assets/images/home1.png'
-import home2 from '@/assets/images/home2.png'
-import home3 from '@/assets/images/home3.png'
-import home4 from '@/assets/images/home4.png'
-import home5 from '@/assets/images/home5.png'
-// import home6 from '@/assets/images/home6.png'
-import home7 from '@/assets/images/home7.png'
-import home8 from '@/assets/images/home8.png'
-import footer from '@/assets/images/footer.png'
+// import home1 from '@/assets/images/home1.png'
+// import home2 from '@/assets/images/home2.png'
+// import home3 from '@/assets/images/home3.png'
+// import home4 from '@/assets/images/home4.png'
+// import home5 from '@/assets/images/home5.png'
+// // import home6 from '@/assets/images/home6.png'
+// import home7 from '@/assets/images/home7.png'
+// import home8 from '@/assets/images/home8.png'
+// import footer from '@/assets/images/footer.png'
 import CodeModal from '../components/CodeModal'
 import SearchBox from '@/components/SearchBox'
 import ResultsContainer from '@/components/resultsContainer'
@@ -41,11 +41,11 @@ const Homepage = () => {
   }, [activeIndex.isNeural])
 
   return (
-    <div>
+    <div className="h-screen">
       <CodeModal />
-      <img className="w-full" src={home1} alt="home1" />
-      <section className="flex flex-col items-center py-32 bg-[#000034]">
-        <div className="w-[90%] shadow-custom bg-white rounded-[16px] py-12 px-12 gap-12 grid grid-cols-1 max-w-[1440px] items-center xl:grid-cols-2">
+      {/* <img className="w-full" src={home1} alt="home1" /> */}
+      <section className="flex flex-col items-center justify-center h-full bg-[#000034]">
+        <div className="w-[90%] shadow-custom bg-white rounded-[16px] py-12 px-12 gap-12 grid grid-cols-2 max-w-[1440px] items-center">
           <div className="xl:px-4">
             <p className="text-4xl leading-tight text-[#36395a] font-medium mb-4">
               AI Search That Understands
@@ -89,16 +89,16 @@ const Homepage = () => {
         <CtaButton />
       </section>
 
-      <img className="w-full" src={home2} alt="home2" />
+      {/* <img className="w-full" src={home2} alt="home2" />
       <img className="w-full" src={home3} alt="home3" />
       <img className="w-full" src={home4} alt="home4" />
-      <img className="w-full" src={home5} alt="home5" />
+      <img className="w-full" src={home5} alt="home5" /> */}
       {/* <img src={home6} alt="home6" /> */}
-      <img className="w-full" src={home7} alt="home7" />
-      <img className="w-full" src={home8} alt="home8" />
-      <footer>
+      {/* <img className="w-full" src={home7} alt="home7" />
+      <img className="w-full" src={home8} alt="home8" /> */}
+      {/* <footer>
         <img className="w-full" src={footer} alt="" />
-      </footer>
+      </footer> */}
     </div>
   )
 }
