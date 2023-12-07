@@ -1,6 +1,6 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 /* Your custom styles go here */
 
@@ -32,6 +32,8 @@ a {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: #000034;
+  min-height: 100vh;
 }
 /*
   5. Improve media defaults
@@ -71,6 +73,7 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+  min-height: 100vh;
 }
 
 li {
@@ -169,7 +172,7 @@ input:focus ~ .stl-toggle {
   position: relative;
 }
 .hits-view:after {
-  content: " ";
+  content: ' ';
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -198,7 +201,7 @@ input:focus ~ .stl-toggle {
 }
 
 .uic-HorizontalSlider-container:after {
-  content: " ";
+  content: ' ';
   position: absolute;
   right: 0;
   top: 0;

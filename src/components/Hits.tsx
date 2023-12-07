@@ -30,19 +30,34 @@ export const Hit = ({ hit }: { hit: BaseHit }) => {
   const [neuralBorder, setNeuralBorder] = useState(false)
   const [activeIndex] = useRecoilState<IndexAtom>(indexAtom)
   return (
-    <div className={`rounded-[9px] relative  p-0 ${activeIndex.isNeural && neuralBorder && `background-animate`}`}>
+    <div
+      className={`rounded-[9px] relative  p-0 ${
+        activeIndex.isNeural && neuralBorder && `background-animate`
+      }`}
+    >
       <div className="relative">
-        <NeuralBadge rankingInfo={hit._rankingInfo} setNeuralBorder={setNeuralBorder} />
-        <div className={`mx-auto w-full ${activeIndex.isNeural && neuralBorder && 'p-[2px]'}`}>
+        <NeuralBadge
+          rankingInfo={hit._rankingInfo}
+          setNeuralBorder={setNeuralBorder}
+        />
+        <div
+          className={`mx-auto w-full ${
+            activeIndex.isNeural && neuralBorder && 'p-[2px]'
+          }`}
+        >
           <img
-            className={`w-full aspect-[9/12] rounded-lg bg-white object-cover ${activeIndex.isNeural && neuralBorder && 'border-[1px] border-white'}`}
+            className={`w-full aspect-[9/12] rounded-lg bg-white object-cover ${
+              activeIndex.isNeural &&
+              neuralBorder &&
+              'border-[1px] border-white'
+            }`}
             src={hit.image_link as string}
             alt={hit.title as string}
             onError={(e) => {
               console.log(e)
             }}
           />
-          <div className="absolute -translate-x-1/2 px-1 left-1/2 bottom-1 w-full shadow-sm">
+          <div className="absolute w-full px-1 -translate-x-1/2 shadow-sm left-1/2 bottom-1">
             <h2 className="text-[10px] leading-snug text-center p-1.5 bg-white border rounded-md w-auto border-gray font-semibold text-black">
               {(hit.title as string).split(' - ')[1]}
             </h2>
@@ -57,7 +72,7 @@ function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
   const { hits } = useHits(props)
 
   return (
-    <div className="hits-view w-full">
+    <div className="w-full hits-view">
       <div className="hits-scroll relative grid grid-cols-4 gap-2 w-full min-h-[8rem] max-h-[24rem] overflow-y-auto pr-2">
         {hits?.length > 0 ? (
           <>
@@ -68,7 +83,7 @@ function CustomHits(props: UseHitsProps<BaseHit> | undefined) {
             ))}
           </>
         ) : (
-          <p className="col-span-4 text-center mt-4">No search Results...</p>
+          <p className="col-span-4 mt-4 text-center">No search Results...</p>
         )}
       </div>
       <div className="absolute bottom-0 right-0">
