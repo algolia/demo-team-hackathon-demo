@@ -1,4 +1,4 @@
-# Algolia Reveal: Unveiling Developer Magic
+# Algolia Reveal: Unveiling Developer Magic 🪄
 
 Welcome to the official repository of "Algolia Reveal," a demonstration built to showcase the powerful capabilities of Algolia's widgets with interactive code insights and AI-powered search functionality.
 
@@ -11,7 +11,7 @@ Our demonstration offers a hands-on experience that allows developers to:
 - Hover over Algolia widgets and immediately view the HTML and JavaScript that brings each widget to life.
 - Activate Algolia's AI features through a toggle switch, showcasing enhanced search results and trending items recommendations.
 
-## Getting Started with "Algolia Reveal"
+## Getting Started with "Algolia Reveal" 😶‍🌫️
 
 This demo uses the speedy and modern Vite tooling, React for UI rendering, and TypeScript for typed JavaScript code to deliver a high-quality developer experience. Below are the outlined steps and requirements to set up and run the project on your local machine.
 
@@ -20,7 +20,7 @@ This demo uses the speedy and modern Vite tooling, React for UI rendering, and T
 - Node.js (version 12 or later)
 - Yarn or npm package manager
 
-### Setup Instructions
+### Setup Instructions 👩‍💻
 
 1. Clone the repository to your local machine.
    ```bash
@@ -60,7 +60,7 @@ Adjust `parserOptions` in `.eslintrc.js` with the following to enable type-aware
     "project": ["./tsconfig.json", "./tsconfig.node.json"],
     "tsconfigRootDir": __dirname
   }
-}
+}```
 
 For a more stringent linting process, consider these adjustments:
 
@@ -85,4 +85,3 @@ Although this demo was crafted in a limited timeframe, it stands on the shoulder
 
 🌟 Enjoy exploring "Algolia Reveal" and don't forget to spread the word if you find it helpful! Your support is greatly appreciated.
 
-```
