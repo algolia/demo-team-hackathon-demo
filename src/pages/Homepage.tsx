@@ -30,9 +30,9 @@ const Homepage = () => {
   }, [activeIndex.isNeural])
 
   return (
-    <div className="h-screen">
+    <div className="relative min-h-screen">
       <CodeModal />
-      <section className="flex flex-col items-center justify-center h-full bg-[#000034]">
+      <section className="flex flex-col items-center justify-center min-h-screen py-8 bg-[#000034]">
         <div className="w-[90%] shadow-custom bg-white rounded-[16px] py-12 px-12 gap-12 grid grid-cols-2 max-w-[1440px] items-center">
           <div className="xl:px-4">
             <p className="text-4xl leading-tight text-[#36395a] font-medium mb-4">
